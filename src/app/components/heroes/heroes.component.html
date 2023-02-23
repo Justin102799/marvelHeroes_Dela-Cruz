@@ -1,0 +1,25 @@
+<div class="title">
+    <h1>Which <a>MARVEL</a> Hero Are You?</h1>
+    <div class="title2">
+        <h1><i>Choose your Character</i></h1>
+    </div>
+    <ul class="heroes">
+        <li *ngFor="let hero of hero">
+            <button type="button" class="btn" [class.selected] ="hero === selectedHero"
+             (click)="onSelect(hero)">
+                <span>{{hero.name}}</span>
+            </button>
+        </li>
+    </ul>
+</div>
+<div class="details" *ngIf="selectedHero">
+    <h1>Hero's Details</h1>
+    <div>Hero's Name:  <strong>{{selectedHero.name}}</strong></div>
+    <br>
+    <div>Hero's Ability : <strong>{{selectedHero.ability}}</strong></div>
+    <!-- <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)] = "selectedHero.name" placeholder="name">
+    </div> -->
+
+</div>
